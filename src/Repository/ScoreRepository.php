@@ -22,19 +22,16 @@ class ScoreRepository extends ServiceEntityRepository
     // /**
     //  * @return Score[] Returns an array of Score objects
     //  */
-    /*
-    public function findByExampleField($value)
+    public function findBestScores()
     {
         return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('s.id', 'ASC')
+            ->orderBy('s.rate', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+    
 
     /*
     public function findOneBySomeField($value): ?Score

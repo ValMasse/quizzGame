@@ -21,7 +21,7 @@ class ScoreController extends AbstractController
     public function index(ScoreRepository $scoreRepository): Response
     {
         return $this->render('score/index.html.twig', [
-            'scores' => $scoreRepository->findAll(),
+            'scores' => $scoreRepository->findBestScores(),
         ]);
     }
 
