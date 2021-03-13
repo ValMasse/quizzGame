@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">accueil</a>
+        <a class="nav-link" href="{{ path('homepage') }}">accueil</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">jouer une partie!
@@ -15,16 +15,25 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">meilleurs scores</a>
+        <a class="nav-link" href="{{ path('score_index')}}">meilleurs scores</a>
+      </li>
+
+      {# ...  Connexion / Sign up  #}
+	  {% if not app.user %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ path('app_login') }}">se connecter</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">se connecter</a>
+        <a class="nav-link" href="{{ path('app_register') }}">s'inscrire</a>
       </li>
+      {% else %}
       <li class="nav-item">
-        <a class="nav-link" href="#">s'inscrire</a>
+        <a class="nav-link" href="#">profil de {{app.user.pseudo}}</a>
       </li>
+      {% endif %}
+      {# ...  About Us  #}
       <li class="nav-item">
-        <a class="nav-link" href="#">a propos</a>
+        <a class="nav-link" href="{{ path('about_us')}}">a propos</a>
       </li>
     </ul>
   </div>

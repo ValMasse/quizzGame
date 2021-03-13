@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Score index{% endblock %}
+
+{% block body %}
+    <h1>TOP 10 SCORES</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Classement</th>
+                <th>Score</th>
+                <th>Joueur</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for score in scores %}
+            <tr>
+                <td>{{ score.id }}</td>
+                <td>{{ score.rate }}</td>
+                <td>{{ score.quizz.user }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Pas de résultats</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

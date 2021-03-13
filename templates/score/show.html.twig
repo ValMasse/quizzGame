@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Score{% endblock %}
+
+{% block body %}
+    <h1>Score</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ score.id }}</td>
+            </tr>
+            <tr>
+                <th>Rate</th>
+                <td>{{ score.rate }}</td>
+            </tr>
+            <tr>
+                <th>Is_perfect</th>
+                <td>{{ score.isPerfect ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('score_index') }}">back to list</a>
+
+    <a href="{{ path('score_edit', {'id': score.id}) }}">edit</a>
+
+    {{ include('score/_delete_form.html.twig') }}
+{% endblock %}
