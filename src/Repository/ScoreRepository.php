@@ -25,7 +25,7 @@ class ScoreRepository extends ServiceEntityRepository
     public function findBestScores()
     {
         return $this->createQueryBuilder('s')
-            ->orderBy('s.rate', 'ASC')
+            ->orderBy('s.rate', 'DESC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()

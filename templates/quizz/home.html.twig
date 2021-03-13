@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quizz Homepage{% endblock %}
+
+{% block body %}
+    <br><br>
+    <p>Le quizz est composé de 12 Questions choisies aléatoirement parmis les 4 Thèmes suivants :</p><br>
+    <p>Sport</p><br>
+    <p>Dev</p><br>
+    <p>Culture Générale</p><br>
+    <p>Cinéma</p><br>
+    <p>Une réponse correcte vous fait gagner 1 point</p><br>
+    <p>Score parfait : 12 bonnes réponses</p><br>
+
+
+    <h1>LANCER UNE PARTIE</h1>
+    <button type="button" class="btn btn-success">
+    <a href="{{ path('start') }}">Démarrer</a>
+    </button>
+
+
+    <button type="button" class="btn btn-danger" style="float:right">
+    <a href="{{ path('homepage') }}">Annuler</a>
+    </button>
+
+{% endblock %}
